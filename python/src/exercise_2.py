@@ -1,7 +1,6 @@
 def func(value):
     second_item = value[1]
-    length = len(second_item)
-    last_symbol = second_item[length - 1:]
+    last_symbol = second_item[-1]
     return last_symbol
 
 items = [('one', 'two'), ('three', 'four'), ('five', 'six'), ('string', 'a')]
