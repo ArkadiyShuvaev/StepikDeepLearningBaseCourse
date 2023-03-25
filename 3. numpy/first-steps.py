@@ -1,6 +1,6 @@
 import numpy as np
 
-arr = np.array([1, 2, 3], dtype="int64")
+# arr = np.array([1, 2, 3], dtype="int64")
 # print(type(arr))
 # print(set(dir(arr)) - set(dir(object)))
 # print(arr.nbytes) # 64/8 * 3 = 24
@@ -69,20 +69,20 @@ arr = np.array([1, 2, 3], dtype="int64")
 # arr = np.logspace(0, 3, 5) # 10^0, 10^3, step: 5
 # print(arr) # [ 1. 5.62341325 31.6227766 177.827941 1000. ]
 
-# print(np.log10(a))
+# print(np.log10(arr))
 # print(type(np.cos))
 
-a = np.linspace(3, 33, 11)
-b = np.linspace(-2, -22, 11)
+# a = np.linspace(3, 33, 11)
+# b = np.linspace(-2, -22, 11)
 
 # print(a)
 # print(b)
 # print("\n")
 
-# # print(a + b)
-# # print(a - b)
-# # print(a * b)
-# # print(a / b)
+# print(a + b)
+# print(a - b)
+# print(a * b)
+# print(a / b)
 
 # print(5 * a) # 5 - scalar 
 # print(2 ** a) 
@@ -110,12 +110,12 @@ b = np.linspace(-2, -22, 11)
 # print(b)          # [1 2 3 4]
 # print(b.cumsum()) # [ 1  3  6 10 ]
 
-# Sorting
+# # Sorting
 # print(np.sort(b))
 # b.sort()  # Inplace sorting
 # print(b)
 
-# Merging/Stacking arrays
+# # Merging/Stacking arrays
 # a = np.zeros(2)
 # b = np.ones(2)
 # c = np.hstack((a, b))
@@ -139,22 +139,129 @@ b = np.linspace(-2, -22, 11)
 
 # b = a.copy()   # a new memory allocation
 
-# Task #3
+# # Task #3
+# # import the numpy module
+# import numpy as np
+
+# # create an array of 100 values between -4pi and 4pi
 # a = np.linspace(start=-4*np.pi, stop=4*np.pi, num=100)
+
+# # create an array of the cosine of each element of a squared plus the sine of each element of a squared
 # sum2 = np.cos(a)**2 + np.sin(a)**2
+
+# # print the sum2 array
 # print(sum2)
+
+# # print True if all elements of sum2 are equal to 1
 # print(np.all(sum2))
 
-# two-dimensional arrays
-a = np.array([[1, 2], [2, 3]])
+# # two-dimensional arrays
+# a = np.array([[1, 2], [2, 3]])
 # print("len:", len(a), "-- количество элементов по первой оси.",       # 2
 #       "\nsize:", a.size, "-- всего элементов в матрице.",             # 4
 #       "\nndim:", a.ndim, "-- размерность матрицы.",                   # 2
 #       "\nshape:", a.shape, "-- количество элементов по каждой оси.")  # (2, 2)
-
 # print(a[1, 1]) # 3
 # print(a[1][1]) # 3
 
-b = np.arange(0, 20)
-b.shape = (2, 10)
-print(b)          # [[ 0  1  2  3  4  5  6  7  8  9] [10 11 12 13 14 15 16 17 18 19]]
+# # Create a 2x10 array
+# b = np.arange(0, 20)
+# # Change the shape of the array to 2x10
+# b.shape = (2, 10)
+# print(b) #[[ 0  1  2  3  4  5  6  7  8  9] [10 11 12 13 14 15 16 17 18 19]]
+
+# c = np.ravel(b)
+# print(c) # [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
+
+# # Create a 3x3 array of ones
+# a = np.ones((3, 3))
+# # Print the array
+# print(a)
+
+# a = np.zeros((3, 3))
+# print(a)
+
+# # Create a 3x3 identity matrix
+# c = np.eye(3)
+# print(c)
+
+# # create a 4x4 diagonal array
+# d = np.diag(np.array([1, 2, 3, 4]))
+# print(d)
+
+
+# # Exercise
+# # Solution 1
+# # Create a 8x8 matrix with values 3, 6, 9, ..., 45
+# dimention = 8
+# step = 3
+# init_value = 3
+# primary_matrix_values = np.linspace(init_value, step * dimention, dimention)
+
+# # Create a diagonal matrix using the primary matrix values
+# a = np.diag(primary_matrix_values)
+
+# # Replace the secondary diagonal with -1s
+# for i in range(dimention): 
+#     j = dimention - i - 1
+#     a[i][j] = -1
+        
+# print(a)
+
+# Solution 2
+# dimention = 8
+# step = 3
+# init_value = 3
+# a = -1 * np.eye(dimention)[::-1]
+# b = np.diag(np.arange(init_value, dimention * step + init_value, step))
+# print(a)
+# print(b)
+# result = a + b
+# print(result)
+
+# a = 5 * np.ones((5, 5))
+# b = np.eye(5) + 1
+# print(a * b)
+# # Print the results of multiplying a and b using the @ operator
+# print(a @ b)
+# # Print the results of multiplying a and b using the dot function
+# print(a.dot(b))
+
+# u = np.linspace(1, 2, 2) # creates a list of values between 1 and 2 with 2 elements
+# v = np.linspace(4, 8, 3) # creates a list of values between 4 and 8 with 3 elements
+# print(u)
+# print(v)
+
+# x, y = np.meshgrid(u, v) # creates a grid of values, with x being the first list and y being the second list
+# print(x)
+# # [[1. 2.]
+# #  [1. 2.]
+# #  [1. 2.]]
+
+# print(y)
+# # [[4. 4.]
+# #  [6. 6.]
+# #  [8. 8.]]
+
+# print(x.reshape(6))
+# # [1. 2. 1. 2. 1. 2.]
+
+# Exercise create a vector of size 100. Use TRUE if the number is prime
+# Define the highest possible value we want to check for primality
+max_value = 100
+
+# Create an empty list to hold our results
+primes = []
+
+for possible_prime in range(2, max_value + 1):
+    # Assume the value is prime until shown it is not
+    is_prime = True
+    for i in range(2, possible_prime):
+        if possible_prime % i == 0:
+            is_prime = False
+    if is_prime:
+        primes.append(True)
+    else:
+        primes.append(False)
+
+print(primes)
