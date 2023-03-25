@@ -1,5 +1,6 @@
 {
   "python.linting.enabled": true,
   "trailing-spaces.deleteModifiedLinesOnly": true,
-  "python.analysis.typeCheckingMode": "basic"
+  "trailing-spaces.trimOnSave": true,
+  "python.analysis.typeCheckingMode": "basic",
 }
