@@ -246,22 +246,43 @@ import numpy as np
 # print(x.reshape(6))
 # # [1. 2. 1. 2. 1. 2.]
 
-# Exercise create a vector of size 100. Use TRUE if the number is prime
-# Define the highest possible value we want to check for primality
-max_value = 100
+# # Exercise 5. Create a vector of size 100. Use TRUE if the number is prime
+# # Define the highest possible value we want to check for primality
+# max_value = 100
 
-# Create an empty list to hold our results
-primes = []
+# # Create an empty list to hold our results
+# primes = np.zeros(max_value, dtype=bool)
 
-for possible_prime in range(2, max_value + 1):
-    # Assume the value is prime until shown it is not
-    is_prime = True
-    for i in range(2, possible_prime):
-        if possible_prime % i == 0:
-            is_prime = False
-    if is_prime:
-        primes.append(True)
-    else:
-        primes.append(False)
+# for possible_prime in range(2, max_value):
+#     # Assume the value is prime until shown it is not
+#     is_prime = True
+#     for i in range(2, possible_prime):
+#         if possible_prime % i == 0:
+#             is_prime = False
+#             break
 
-print(primes)
+#     if is_prime:
+#         primes[possible_prime] = True
+
+# print(primes)
+
+# # Exercise 5.1. Create a vector of primes of size 100.
+# # Define the highest possible value we want to check for primality
+# max_value = 100
+
+# # Create an empty list to hold our results
+# primes = []
+
+# for possible_prime in range(2, max_value):
+#     # Assume the value is prime until shown it is not
+#     is_prime = True
+#     for i in range(2, int(np.sqrt(possible_prime) + 1)):
+#         if possible_prime % i == 0:
+#             is_prime = False
+#             break
+
+#     if is_prime:
+#         primes.append(possible_prime)
+
+# print(primes)
+
