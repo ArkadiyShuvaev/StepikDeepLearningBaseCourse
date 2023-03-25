@@ -12,7 +12,7 @@ import numpy as np
 
 # arr2 = np.array([[[1, 2, 3, 4],
 #                 [2, 3, 4, 3],
-#                 [1, 1, 1, 1]], 
+#                 [1, 1, 1, 1]],
 #                 [[1, 2, 3, 4],
 #                 [2, 3, 4, 3],
 #                 [1, 1, 1, 1]]])
@@ -84,8 +84,8 @@ import numpy as np
 # print(a * b)
 # print(a / b)
 
-# print(5 * a) # 5 - scalar 
-# print(2 ** a) 
+# print(5 * a) # 5 - scalar
+# print(2 ** a)
 # print(a ** 2)
 # print(a > b)
 # print(a >= 10)
@@ -125,7 +125,7 @@ import numpy as np
 
 # # Append, delete, insert - create new array
 # a = np.ones(5)                   # [1. 1. 1. 1. 1.]
-# a = a.cumsum()  
+# a = a.cumsum()
 # print(a)                         # [1. 2. 3. 4. 5.]
 # print(np.append(a, [2, 3]))      # [1. 2. 3. 4. 5. 2. 3.]
 # print(np.delete(a, [0, 2, 4]))   # [2. 4.] ([0, 2, 4] - array indexes)
@@ -202,10 +202,10 @@ import numpy as np
 # a = np.diag(primary_matrix_values)
 
 # # Replace the secondary diagonal with -1s
-# for i in range(dimention): 
+# for i in range(dimention):
 #     j = dimention - i - 1
 #     a[i][j] = -1
-        
+
 # print(a)
 
 # Solution 2
@@ -285,4 +285,31 @@ import numpy as np
 #         primes.append(possible_prime)
 
 # print(primes)
+
+# # MASKS
+# a = np.arange(20)
+# print(a % 3 == 0)
+# # [ True False False  True False False  True False False  True False False
+# #  True False False  True False False  True False]
+
+# # Print the elements of a where the modulus 3 operation is equal to 0
+# print(a[a % 3 == 0]) # [ 0  3  6  9 12 15 18]
+
+# # TRACE. It is a sum of all the diagonal elements of the matrix.
+# b = np.diag(a[a >= 10])
+# print(b)
+# # [[10  0  0  0  0  0  0  0  0  0]
+# #  [ 0 11  0  0  0  0  0  0  0  0]
+# #  [ 0  0 12  0  0  0  0  0  0  0]
+# #  [ 0  0  0 13  0  0  0  0  0  0]
+# #  [ 0  0  0  0 14  0  0  0  0  0]
+# #  [ 0  0  0  0  0 15  0  0  0  0]
+# #  [ 0  0  0  0  0  0 16  0  0  0]
+# #  [ 0  0  0  0  0  0  0 17  0  0]
+# #  [ 0  0  0  0  0  0  0  0 18  0]
+# #  [ 0  0  0  0  0  0  0  0  0 19]]
+
+# # Print the trace of the array
+# print(np.trace(b))
+# # 145 (10 + 11 + 12 + .... + 19)
 
