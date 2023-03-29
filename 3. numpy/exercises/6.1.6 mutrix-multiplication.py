@@ -51,9 +51,5 @@ print(a)
 b = numpy_mult(np.array([[2, -3, 1], [5, 4, -2]]), np.array([[-7, 5], [2, -1], [4, 3]]))
 print(b)
 
-a = np.array([[1, 0],
-              [0, 1]])
-b = np.array([1, 2])
-print(type(b))
-print(type(b.tolist()))
-print(np.matmul(a, b))
+# [[-16  16]
+#  [-35  15]]
