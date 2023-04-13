@@ -79,3 +79,16 @@ print(series4[values])
 # 2023-03-05    0.957485
 # 2023-03-08    0.661586
 # dtype: float64
+
+series5 = pd.Series(np.random.rand(10), index=date_range)
+
+# AND
+# print(series5[(series5 > .8) & (series5 < .2)])
+# OR
+print(series5[(series5 > .8) | (series5 < .2)])
+# 2023-02-28    0.037394
+# 2023-03-01    0.962097
+# 2023-03-02    0.157953
+# 2023-03-05    0.998697
+# 2023-03-08    0.945864
+# dtype: float64
